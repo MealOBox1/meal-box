@@ -1,0 +1,20 @@
+.radioStyle {
+  display: block;
+  height: 30px;
+  /* lineheight: 30px; */
+}
+.popoverContent {
+  position: absolute;
+  /* z-index: -1; */
+  content: "";
+  right: calc(50% - 10px);
+  top: -8px;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent #bfbfbf transparent;
+  transition-duration: 0.3s;
+  transition-property: transform;
+  z-index: 10;
+  opacity: 1;
+  visibility: visible;
+}
