@@ -56,9 +56,4 @@ export const GetAddress = (data) => (dispatch) => {
   );
 };
 
-export const foodDetail = (data) => (dispatch) => {
-  dispatch({
-    type: Post_Add,
-    payload: data,
-  });
-};
+

@@ -1,11 +1,12 @@
-import { Order_Food } from "../Actions/Types";
+import { Order_Food, Order_Add } from "../Actions/Types";
 
 const initialState = {
   order: {
-    deliveryAddress: {},
+    // deliveryAddress: {},
     ordered: false,
     cart: false,
   },
+  cart: {},
 };
 
 export default function (state = initialState, action) {
@@ -18,6 +19,21 @@ export default function (state = initialState, action) {
       return {
         ...state,
         order: { ...state.order, ...action.payload },
+      };
+    case Order_Add:
+      return {
+        ...state,
+        deliveryAddress: action.payload,
+      };
+    case "Add_cart":
+      return {
+        ...state,
+        cart: action.payload,
+      };
+    case "Get_Cart":
+      return {
+        ...state,
+        cart: action.payload,
       };
     default:
       return state;

@@ -108,7 +108,7 @@ module.exports = require("next/dist/next-server/lib/utils.js");
 /*!**************************!*\
   !*** ./Actions/Types.js ***!
   \**************************/
-/*! exports provided: GET_ITEMS, Post_Plan, Post_Add, Get_Add, Get_Food, Order_Food, defaultAxios */
+/*! exports provided: GET_ITEMS, Post_Plan, Post_Add, Get_Add, Get_Food, Order_Food, Order_Add, defaultAxios */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -119,6 +119,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Get_Add", function() { return Get_Add; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Get_Food", function() { return Get_Food; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Order_Food", function() { return Order_Food; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Order_Add", function() { return Order_Add; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultAxios", function() { return defaultAxios; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
@@ -128,6 +129,7 @@ const Post_Add = "Post_Add";
 const Get_Add = "Get_Add";
 const Get_Food = "Get_Food";
 const Order_Food = "Order_Food";
+const Order_Add = "Order_Add";
 
 const defaultAxios = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
   baseURL: "http://localhost:5000"
@@ -497,10 +499,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 const initialState = {
   order: {
-    deliveryAddress: {},
+    // deliveryAddress: {},
     ordered: false,
     cart: false
-  }
+  },
+  cart: {}
 };
 /* harmony default export */ __webpack_exports__["default"] = (function (state = initialState, action) {
   console.log(action.type);
@@ -512,6 +515,21 @@ const initialState = {
       //localStorage.setItem("item", action.payload.item.items._id);
       return _objectSpread({}, state, {
         order: _objectSpread({}, state.order, {}, action.payload)
+      });
+
+    case _Actions_Types__WEBPACK_IMPORTED_MODULE_0__["Order_Add"]:
+      return _objectSpread({}, state, {
+        deliveryAddress: action.payload
+      });
+
+    case "Add_cart":
+      return _objectSpread({}, state, {
+        cart: action.payload
+      });
+
+    case "Get_Cart":
+      return _objectSpread({}, state, {
+        cart: action.payload
       });
 
     default:

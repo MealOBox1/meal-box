@@ -119,7 +119,7 @@ module.exports = require("next/dist/next-server/lib/utils.js");
 /*!********************************!*\
   !*** ./Actions/ItemsAction.js ***!
   \********************************/
-/*! exports provided: getItems, getFood, postPlan, postAddress, GetAddress, foodDetail */
+/*! exports provided: getItems, getFood, postPlan, postAddress, GetAddress */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -129,7 +129,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postPlan", function() { return postPlan; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postAddress", function() { return postAddress; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GetAddress", function() { return GetAddress; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "foodDetail", function() { return foodDetail; });
 /* harmony import */ var _Types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Types */ "./Actions/Types.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
@@ -176,12 +175,6 @@ const GetAddress = data => dispatch => {
     payload: res.data
   }));
 };
-const foodDetail = data => dispatch => {
-  dispatch({
-    type: _Types__WEBPACK_IMPORTED_MODULE_0__["Post_Add"],
-    payload: data
-  });
-};
 
 /***/ }),
 
@@ -189,18 +182,40 @@ const foodDetail = data => dispatch => {
 /*!********************************!*\
   !*** ./Actions/OrderAction.js ***!
   \********************************/
-/*! exports provided: Orderfood */
+/*! exports provided: Orderfood, OrderAddress, getCart, Createcart */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Orderfood", function() { return Orderfood; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderAddress", function() { return OrderAddress; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getCart", function() { return getCart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Createcart", function() { return Createcart; });
 /* harmony import */ var _Types__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Types */ "./Actions/Types.js");
 
 const Orderfood = data => dispatch => {
   console.log(data);
   dispatch({
     type: _Types__WEBPACK_IMPORTED_MODULE_0__["Order_Food"],
+    payload: data
+  });
+};
+const OrderAddress = data => dispatch => {
+  console.log(data);
+  dispatch({
+    type: _Types__WEBPACK_IMPORTED_MODULE_0__["Order_Add"],
+    payload: data
+  });
+};
+const getCart = data => dispatch => {
+  _Types__WEBPACK_IMPORTED_MODULE_0__["defaultAxios"].get(`/venders/${data}`).then(res => dispatch({
+    type: "Get_Cart",
+    payload: data
+  }));
+};
+const Createcart = data => dispatch => {
+  dispatch({
+    type: "Add_cart",
     payload: data
   });
 };
@@ -211,7 +226,7 @@ const Orderfood = data => dispatch => {
 /*!**************************!*\
   !*** ./Actions/Types.js ***!
   \**************************/
-/*! exports provided: GET_ITEMS, Post_Plan, Post_Add, Get_Add, Get_Food, Order_Food, defaultAxios */
+/*! exports provided: GET_ITEMS, Post_Plan, Post_Add, Get_Add, Get_Food, Order_Food, Order_Add, defaultAxios */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -222,6 +237,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Get_Add", function() { return Get_Add; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Get_Food", function() { return Get_Food; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Order_Food", function() { return Order_Food; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Order_Add", function() { return Order_Add; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "defaultAxios", function() { return defaultAxios; });
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
@@ -231,6 +247,7 @@ const Post_Add = "Post_Add";
 const Get_Add = "Get_Add";
 const Get_Food = "Get_Food";
 const Order_Food = "Order_Food";
+const Order_Add = "Order_Add";
 
 const defaultAxios = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
   baseURL: "http://localhost:5000"
@@ -2730,7 +2747,14 @@ function Food(props) {
     1: setfoodId
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
     id: "",
-    subscriptionDays: ""
+    subscriptionDays: 1
+  });
+  const {
+    0: cart,
+    1: setcart
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    food: "",
+    days: 3
   });
 
   const showModal = () => {
@@ -2740,6 +2764,9 @@ function Food(props) {
     setfoodId(prevState => _objectSpread({}, prevState, {
       id: props.menu[0]._id
     }));
+    setcart(prevState => _objectSpread({}, prevState, {
+      food: props.menu[0]
+    }));
   };
 
   const handleOk = () => {
@@ -2747,9 +2774,6 @@ function Food(props) {
       loading: true
     }));
     console.log(value);
-    setfoodId(prevState => _objectSpread({}, prevState, {
-      subscriptionDays: value
-    }));
     setTimeout(() => {
       setmodalProps(prevState => _objectSpread({}, prevState, {
         loading: false,
@@ -2757,7 +2781,8 @@ function Food(props) {
       }));
       console.log(foodId);
       props.Orderfood(foodId);
-      next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push("/shipping");
+      props.Createcart(cart);
+      next_router__WEBPACK_IMPORTED_MODULE_2___default.a.push("/[shipping]", `/${foodId.id}`);
     }, 3000);
   };
 
@@ -2788,6 +2813,12 @@ function Food(props) {
 
   const onchange = e => {
     setvalue(e.target.value);
+    setfoodId(prevState => _objectSpread({}, prevState, {
+      subscriptionDays: value
+    }));
+    setcart(prevState => _objectSpread({}, prevState, {
+      days: value
+    }));
   };
 
   const selectedFood = event => {
@@ -2798,14 +2829,14 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89,
+      lineNumber: 106,
       columnNumber: 5
     }
   }, __jsx(_userlayout__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90,
+      lineNumber: 107,
       columnNumber: 7
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -2816,7 +2847,7 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 108,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -2824,7 +2855,7 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 109,
       columnNumber: 11
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"], {
@@ -2834,14 +2865,14 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 110,
       columnNumber: 13
     }
   }, __jsx("h3", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 111,
       columnNumber: 15
     }
   }, "All deliveries"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -2853,7 +2884,7 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96,
+      lineNumber: 113,
       columnNumber: 15
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"], {
@@ -2869,7 +2900,7 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103,
+      lineNumber: 120,
       columnNumber: 17
     }
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -2885,14 +2916,14 @@ function Food(props) {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 120,
+        lineNumber: 137,
         columnNumber: 25
       }
     }),
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111,
+      lineNumber: 128,
       columnNumber: 17
     }
   }, "Search"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Switch"], {
@@ -2908,14 +2939,14 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 141,
       columnNumber: 17
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136,
+      lineNumber: 153,
       columnNumber: 15
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Menu"], {
@@ -2925,7 +2956,7 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 137,
+      lineNumber: 154,
       columnNumber: 17
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Menu"].Item, {
@@ -2937,14 +2968,14 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142,
+      lineNumber: 159,
       columnNumber: 19
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147,
+      lineNumber: 164,
       columnNumber: 21
     }
   }, " Breakfast")), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Menu"].Item, {
@@ -2956,14 +2987,14 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 149,
+      lineNumber: 166,
       columnNumber: 19
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154,
+      lineNumber: 171,
       columnNumber: 21
     }
   }, "lunch")), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Menu"].Item, {
@@ -2975,14 +3006,14 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156,
+      lineNumber: 173,
       columnNumber: 19
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 161,
+      lineNumber: 178,
       columnNumber: 21
     }
   }, "dinner")), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Menu"].Item, {
@@ -2994,14 +3025,14 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 163,
+      lineNumber: 180,
       columnNumber: 19
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 168,
+      lineNumber: 185,
       columnNumber: 21
     }
   }, "Snacks")))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -3014,7 +3045,7 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 172,
+      lineNumber: 189,
       columnNumber: 15
     }
   }, props.menu.map(el => // <Link href="/posts/[fid]" as={`/posts/${el._id}`}>
@@ -3036,7 +3067,7 @@ function Food(props) {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 191,
+        lineNumber: 208,
         columnNumber: 28
       }
     }),
@@ -3044,21 +3075,21 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 182,
+      lineNumber: 199,
       columnNumber: 19
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 194,
+      lineNumber: 211,
       columnNumber: 21
     }
   }, el.menu), __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 195,
+      lineNumber: 212,
       columnNumber: 21
     }
   }, "Special 1 plate")) // </Link>
@@ -3079,7 +3110,7 @@ function Food(props) {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 281,
+        lineNumber: 298,
         columnNumber: 13
       }
     }, "Return"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"] //   type="primary"
@@ -3103,14 +3134,14 @@ function Food(props) {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 284,
+        lineNumber: 301,
         columnNumber: 13
       }
     }, "Confirm")],
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 273,
+      lineNumber: 290,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -3121,7 +3152,7 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 307,
+      lineNumber: 324,
       columnNumber: 11
     }
   }, __jsx("img", {
@@ -3135,7 +3166,7 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 308,
+      lineNumber: 325,
       columnNumber: 13
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -3145,7 +3176,7 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 314,
+      lineNumber: 331,
       columnNumber: 11
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -3157,21 +3188,21 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 315,
+      lineNumber: 332,
       columnNumber: 13
     }
   }, __jsx("h3", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 322,
+      lineNumber: 339,
       columnNumber: 15
     }
   }, "Roti,Daal & Rice"), __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 323,
+      lineNumber: 340,
       columnNumber: 15
     }
   }, "Special 1 Plate , 4 Roti")), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -3184,14 +3215,14 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 325,
+      lineNumber: 342,
       columnNumber: 13
     }
   }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 329,
+      lineNumber: 346,
       columnNumber: 15
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
@@ -3199,7 +3230,7 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 330,
+      lineNumber: 347,
       columnNumber: 17
     }
   })), __jsx("div", {
@@ -3209,21 +3240,21 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 332,
+      lineNumber: 349,
       columnNumber: 15
     }
   }, __jsx("h3", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 333,
+      lineNumber: 350,
       columnNumber: 17
     }
   }, "Jone Doe"), __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 334,
+      lineNumber: 351,
       columnNumber: 17
     }
   }, "Krishn food")))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -3234,7 +3265,7 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 338,
+      lineNumber: 355,
       columnNumber: 11
     }
   }, __jsx("h3", {
@@ -3244,7 +3275,7 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 343,
+      lineNumber: 360,
       columnNumber: 13
     }
   }, "Choose Subscription Plan"), __jsx("div", {
@@ -3254,7 +3285,7 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 344,
+      lineNumber: 361,
       columnNumber: 13
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Radio"].Group, {
@@ -3263,7 +3294,7 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 345,
+      lineNumber: 362,
       columnNumber: 15
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Radio"], {
@@ -3272,21 +3303,21 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 346,
+      lineNumber: 363,
       columnNumber: 17
     }
   }, "3 Days Subscription Plan"), value == 1 ? __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 350,
+      lineNumber: 367,
       columnNumber: 19
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 351,
+      lineNumber: 368,
       columnNumber: 21
     }
   }, "hi")) : null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Radio"], {
@@ -3295,7 +3326,7 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 354,
+      lineNumber: 371,
       columnNumber: 17
     }
   }, "6 Days Subscription Plan"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Radio"], {
@@ -3304,7 +3335,7 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 357,
+      lineNumber: 374,
       columnNumber: 17
     }
   }, "14 Days Subscription Plan"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Radio"], {
@@ -3313,7 +3344,7 @@ function Food(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 360,
+      lineNumber: 377,
       columnNumber: 17
     }
   }, "28 Days Subscription Plan")))))));
@@ -3325,7 +3356,8 @@ const mapStateToProps = state => ({
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_6__["connect"])(mapStateToProps, {
   getItems: _Actions_ItemsAction__WEBPACK_IMPORTED_MODULE_8__["getItems"],
-  Orderfood: _Actions_OrderAction__WEBPACK_IMPORTED_MODULE_9__["Orderfood"]
+  Orderfood: _Actions_OrderAction__WEBPACK_IMPORTED_MODULE_9__["Orderfood"],
+  Createcart: _Actions_OrderAction__WEBPACK_IMPORTED_MODULE_9__["Createcart"]
 })(Food));
 
 /***/ }),

@@ -49,6 +49,12 @@ const ItemSchema = new Schema({
   },
 });
 
+ItemSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: " foodId",
+  });
+});
+
 //module.exports = Item = mongoose.model("venders", ItemSchema);
 //Create Instance
 const AddVender = mongoose.model("VenderMeals", ItemSchema);

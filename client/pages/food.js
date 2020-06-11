@@ -8,7 +8,7 @@ import Styles from "../styles/food.module.css";
 import { connect } from "react-redux";
 import Link from "next/link";
 import { getItems } from "../Actions/ItemsAction";
-import { Orderfood } from "../Actions/OrderAction";
+import { Orderfood, Createcart } from "../Actions/OrderAction";
 const { Meta } = Card;
 
 function Food(props) {
@@ -18,7 +18,15 @@ function Food(props) {
     visible: false,
   });
   const [value, setvalue] = useState(1);
-  const [foodId, setfoodId] = useState({ id: "", subscriptionDays: "" });
+  const [foodId, setfoodId] = useState({
+    id: "",
+    subscriptionDays: 1,
+  });
+
+  const [cart, setcart] = useState({
+    food: "",
+    days: 3,
+  });
 
   const showModal = () => {
     setmodalProps((prevState) => ({
@@ -29,15 +37,15 @@ function Food(props) {
       ...prevState,
       id: props.menu[0]._id,
     }));
+    setcart((prevState) => ({
+      ...prevState,
+      food: props.menu[0],
+    }));
   };
 
   const handleOk = () => {
     setmodalProps((prevState) => ({ ...prevState, loading: true }));
     console.log(value);
-    setfoodId((prevState) => ({
-      ...prevState,
-      subscriptionDays: value,
-    }));
 
     setTimeout(() => {
       setmodalProps((prevState) => ({
@@ -47,7 +55,8 @@ function Food(props) {
       }));
       console.log(foodId);
       props.Orderfood(foodId);
-      Router.push("/shipping");
+      props.Createcart(cart);
+      Router.push("/[shipping]", `/${foodId.id}`);
     }, 3000);
   };
 
@@ -79,6 +88,14 @@ function Food(props) {
 
   const onchange = (e) => {
     setvalue(e.target.value);
+    setfoodId((prevState) => ({
+      ...prevState,
+      subscriptionDays: value,
+    }));
+    setcart((prevState) => ({
+      ...prevState,
+      days: value,
+    }));
   };
 
   const selectedFood = (event) => {
@@ -403,4 +420,6 @@ function Food(props) {
 const mapStateToProps = (state) => ({
   menu: state.item.items,
 });
-export default connect(mapStateToProps, { getItems, Orderfood })(Food);
+export default connect(mapStateToProps, { getItems, Orderfood, Createcart })(
+  Food
+);

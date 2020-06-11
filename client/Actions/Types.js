@@ -4,6 +4,7 @@ export const Post_Add = "Post_Add";
 export const Get_Add = "Get_Add";
 export const Get_Food = "Get_Food";
 export const Order_Food = "Order_Food";
+export const Order_Add = "Order_Add";
 
 import axios from "axios";
 
