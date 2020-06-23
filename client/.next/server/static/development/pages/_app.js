@@ -344,7 +344,8 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_3__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__["faEnvelope"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__["faKey"]);
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_3__["library"].add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__["faEnvelope"], _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_4__["faKey"]); // import "../css/antd.less";
+// import "../styles/home.less";
 
 class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_8___default.a {
   static async getInitialProps({
@@ -369,14 +370,14 @@ class MyApp extends next_app__WEBPACK_IMPORTED_MODULE_8___default.a {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 27,
+        lineNumber: 29,
         columnNumber: 7
       }
     }, __jsx(Component, _extends({}, pageProps, {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28,
+        lineNumber: 30,
         columnNumber: 9
       }
     })));
@@ -555,11 +556,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reducers_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reducers/index */ "./reducers/index.js");
 
 
+ // import { autoRehydrate } from "redux-persist";
 
 const initialState = {};
 const middelware = [redux_thunk__WEBPACK_IMPORTED_MODULE_1___default.a];
 const composeEnhancers =  false ? undefined : redux__WEBPACK_IMPORTED_MODULE_0__["compose"];
-const store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_index__WEBPACK_IMPORTED_MODULE_2__["default"], initialState, composeEnhancers(Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(...middelware) // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_index__WEBPACK_IMPORTED_MODULE_2__["default"], initialState, composeEnhancers(Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(...middelware) // autoRehydrate()
+// window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 ));
 /* harmony default export */ __webpack_exports__["default"] = (store);
 

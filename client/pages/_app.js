@@ -8,6 +8,8 @@ import withRedux, { createWrapper } from "next-redux-wrapper";
 import store from "../store";
 import App from "next/app";
 library.add(faEnvelope, faKey);
+// import "../css/antd.less";
+// import "../styles/home.less";
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {

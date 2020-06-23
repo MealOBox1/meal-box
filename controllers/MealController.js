@@ -15,8 +15,8 @@ exports.GetMeal = catchAsync(async (req, res, next) => {
   console.log(req.query);
   //const vender = await feature.query;
   const vender = await AddVender.find(req.query);
-  console.log("lpddddddddddppo");
-  console.log(vender);
+  // console.log("lpddddddddddppo");
+  // console.log(vender);
   //send response
   res.json(vender);
 });
@@ -28,8 +28,8 @@ exports.Food = catchAsync(async (req, res, next) => {
   console.log(req.params.id);
   //const vender = await feature.query;
   const vender = await AddVender.findById(req.params.id);
-  console.log("l");
-  console.log(vender);
+  // console.log("l");
+  // console.log(vender);
   //send response
   res.json(vender);
 });

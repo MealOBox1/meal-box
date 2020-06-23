@@ -5,7 +5,7 @@ import UserLayout from "./userlayout";
 import { Card, Input, Button } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import Styles from "../styles/food.module.css";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import Link from "next/link";
 import { getItems } from "../Actions/ItemsAction";
 import { Orderfood, Createcart } from "../Actions/OrderAction";
@@ -24,9 +24,16 @@ function Food(props) {
   });
 
   const [cart, setcart] = useState({
-    food: "",
+    foodid: "",
     days: 3,
   });
+
+  // const [List, setList] = useState(initialState)
+
+  // useEffect(() => {
+  //   const List = useSelector((state) => state);
+  //   console.log(List);
+  // });
 
   const showModal = () => {
     setmodalProps((prevState) => ({
@@ -39,14 +46,15 @@ function Food(props) {
     }));
     setcart((prevState) => ({
       ...prevState,
-      food: props.menu[0],
+      foodid: props.menu[0]._id,
     }));
   };
+  const List = useSelector((state) => state.order.cart);
 
   const handleOk = () => {
     setmodalProps((prevState) => ({ ...prevState, loading: true }));
     console.log(value);
-
+    props.Createcart(cart);
     setTimeout(() => {
       setmodalProps((prevState) => ({
         ...prevState,
@@ -54,10 +62,12 @@ function Food(props) {
         visible: false,
       }));
       console.log(foodId);
-      props.Orderfood(foodId);
-      props.Createcart(cart);
-      Router.push("/[shipping]", `/${foodId.id}`);
-    }, 3000);
+      // props.Orderfood(foodId);
+
+      console.log(props.cart);
+      console.log(List);
+      // Router.push("/[shipping]", `/${List._id}`);
+    }, 4000);
   };
 
   const handleCancel = () => {
@@ -87,15 +97,18 @@ function Food(props) {
   }, [state]);
 
   const onchange = (e) => {
+    console.log(e.target.value);
+
     setvalue(e.target.value);
     setfoodId((prevState) => ({
       ...prevState,
       subscriptionDays: value,
     }));
-    setcart((prevState) => ({
-      ...prevState,
+    setcart({
+      ...cart,
       days: value,
-    }));
+    });
+    console.log(value);
   };
 
   const selectedFood = (event) => {
@@ -108,7 +121,7 @@ function Food(props) {
         <Row style={{ marginTop: "75px", justifyContent: "center" }}>
           <div className="site-card-border-less-wrapper">
             <Card style={{ borderLeft: "3px solid #74cf4e" }}>
-              <h3>All deliveries</h3>
+              <h3>All Meals</h3>
 
               <Row
                 style={{
@@ -153,6 +166,7 @@ function Food(props) {
               <Row>
                 <Menu
                   mode="horizontal"
+                  theme="Light"
                   // style={{ boxShadow: "1px 4px 6px #888888", borderRadius: " 30px" }}
                   defaultSelectedKeys={["2"]}
                 >
@@ -360,21 +374,21 @@ function Food(props) {
             <h3 style={{ marginLeft: "15px" }}>Choose Subscription Plan</h3>
             <div style={{ marginLeft: "15px" }}>
               <Radio.Group onChange={onchange} value={value}>
-                <Radio className={Styles.radioStyle} value={1}>
+                <Radio className={Styles.radioStyle} value={3}>
                   3 Days Subscription Plan
                 </Radio>
-                {value == 1 ? (
+                {value == 3 ? (
                   <Row>
                     <p>hi</p>
                   </Row>
                 ) : null}
-                <Radio className={Styles.radioStyle} value={2}>
+                <Radio className={Styles.radioStyle} value={6}>
                   6 Days Subscription Plan
                 </Radio>
-                <Radio className={Styles.radioStyle} value={3}>
+                <Radio className={Styles.radioStyle} value={14}>
                   14 Days Subscription Plan
                 </Radio>
-                <Radio className={Styles.radioStyle} value={4}>
+                <Radio className={Styles.radioStyle} value={28}>
                   28 Days Subscription Plan
                 </Radio>
                 {/* <Radio style={radioStyle} value={4}>
@@ -419,6 +433,7 @@ function Food(props) {
 
 const mapStateToProps = (state) => ({
   menu: state.item.items,
+  cart: state,
 });
 export default connect(mapStateToProps, { getItems, Orderfood, Createcart })(
   Food

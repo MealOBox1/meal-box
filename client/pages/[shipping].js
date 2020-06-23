@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import UserLayout from "./userlayout";
 import Head from "../components/Header/Head";
 import { Row, Menu, Card, Button, Col } from "antd";
@@ -6,20 +6,40 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { connect } from "react-redux";
 import { GetAddress } from "../Actions/ItemsAction";
-import { OrderAddress, getCart } from "../Actions/OrderAction";
+import { OrderAddress, GetCart } from "../Actions/OrderAction";
+import { plans } from "../Controllers/plans";
+import Router from "next/router";
 
 function shipping(props) {
   const router = useRouter();
   console.log(router.query);
+
+  const [price, setprice] = useState(0);
+  const [tax, settax] = useState(0);
+  const [Total, setTotal] = useState(0);
+
   useEffect(() => {
+    console.log("hiiiiiiiiii");
+    props.GetCart(router.query.shipping);
     props.GetAddress();
-    props.getCart(router.query.shipping);
   }, []);
 
-  const handleAddress = () => {
-    props.OrderAddress(props.address[1]._id);
-  };
+  useEffect(() => {
+    setprice(props.cart.price);
+    console.log(price);
+    settax((price * 20) / 100);
+    setTotal(price + tax);
+  });
+  // if (price > 0) {
+  //   settax((price * 20) / 100);
+  //   setTotal(price + tax);
+  // }
 
+  const handleAddress = () => {
+    props.OrderAddress(router.query.shipping, props.address[1]._id);
+    Router.push("/payment");
+  };
+  console.log(props.cart);
   console.log(props.address[1]);
 
   return (
@@ -140,8 +160,9 @@ function shipping(props) {
                 height: "20px",
               }}
             >
-              {/* <h5>{props.cart.food.menu} </h5>
-              <p>{props.cart.days} Days</p> */}
+              {props.cart.foodid ? <p>{props.cart.foodid.menu}</p> : null}
+
+              <p>{props.cart.days} Days</p>
             </div>
             <div
               style={{
@@ -152,7 +173,7 @@ function shipping(props) {
               }}
             >
               <p style={{ marginBottom: 0 }}>Special 1 plate , 4 roti</p>
-              <p style={{ marginBottom: 0 }}>$ 80</p>
+              <p style={{ marginBottom: 0 }}>${props.cart.price} </p>
             </div>
           </div>
           <div>
@@ -175,11 +196,11 @@ function shipping(props) {
             <ul style={{ listStyle: "none", fontSize: "12px", padding: 0 }}>
               <li style={{ display: "flex", justifyContent: "space-between" }}>
                 <h4>Subtotal</h4>
-                <p>$ 80</p>
+                <p>$ {props.cart.price}</p>
               </li>
               <li style={{ display: "flex", justifyContent: "space-between" }}>
                 <h4>Taxes & Fares</h4>
-                <p>$ 80</p>
+                <p>${tax}</p>
               </li>
               <li style={{ display: "flex", justifyContent: "space-between" }}>
                 <h4>Promo Code</h4>
@@ -198,7 +219,7 @@ function shipping(props) {
                 }}
               >
                 <h4>Total</h4>
-                <p>$ 80</p>
+                <p>$ {Total}</p>
               </li>
             </ul>
           </div>
@@ -210,9 +231,10 @@ function shipping(props) {
 
 const mapStateToProps = (state) => ({
   cart: state.order.cart,
+  // food: state.order.cart.foodid,
   address: state.item.Address,
 });
 
-export default connect(mapStateToProps, { GetAddress, OrderAddress, getCart })(
+export default connect(mapStateToProps, { GetAddress, OrderAddress, GetCart })(
   shipping
 );

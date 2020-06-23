@@ -1,8 +1,25 @@
+/* @import "~antd/dist/my-theme.less"; */
+/* @import "~antd/dist/antd.css" ; */
+/* @import "~antd/dist/antd.less"; */
+
 .radioStyle {
   display: block;
   height: 30px;
   /* lineheight: 30px; */
 }
+
+.ant-menu-horizontal > .ant-menu-item:hover,
+.ant-menu-horizontal > .ant-menu-submenu:hover,
+.ant-menu-horizontal > .ant-menu-item-active,
+.ant-menu-horizontal > .ant-menu-submenu-active,
+.ant-menu-horizontal > .ant-menu-item-open,
+.ant-menu-horizontal > .ant-menu-submenu-open,
+.ant-menu-horizontal > .ant-menu-item-selected,
+.ant-menu-horizontal > .ant-menu-submenu-selected {
+  border-bottom-color: #74cf4e; /*Overriden property*/
+  color: green !important;
+}
+
 .popoverContent {
   position: absolute;
   /* z-index: -1; */
