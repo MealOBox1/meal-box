@@ -1,5 +1,5 @@
 @import "~antd/dist/antd.css";
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@600&display=swap"); */
 
 html,
 body {
@@ -30,3 +30,27 @@ img {
   max-width: 100%;
   display: block;
 }
+
+/* .ant-layout {
+  background: transparent;
+}
+
+.ant-menu-horizontal > .ant-menu-item:hover,
+.ant-menu-horizontal > .ant-menu-submenu:hover,
+.ant-menu-horizontal > .ant-menu-item-active,
+.ant-menu-horizontal > .ant-menu-submenu-active,
+.ant-menu-horizontal > .ant-menu-item-open,
+.ant-menu-horizontal > .ant-menu-submenu-open,
+.ant-menu-horizontal > .ant-menu-item-selected,
+.ant-menu-horizontal > .ant-menu-submenu-selected {
+  border-bottom-color: #74cf4e;
+  color: white;
+}
+
+.ant-menu-horizontal {
+  border-bottom: 0px !important;
+}
+ant-btn:hover,
+.ant-btn:focus {
+  border-color: green !important;
+} */

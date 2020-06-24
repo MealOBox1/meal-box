@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1661,6 +1661,7 @@ const {
 
 
 
+ // import "../styles/home.css";
 
 function home() {
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
@@ -1668,14 +1669,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 599,
+      lineNumber: 600,
       columnNumber: 7
     }
   }, __jsx(Header, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 600,
+      lineNumber: 601,
       columnNumber: 9
     }
   }, __jsx("div", {
@@ -1683,7 +1684,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 601,
+      lineNumber: 602,
       columnNumber: 11
     }
   }, __jsx("img", {
@@ -1694,7 +1695,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 602,
+      lineNumber: 603,
       columnNumber: 13
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Menu"], {
@@ -1708,7 +1709,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 604,
+      lineNumber: 605,
       columnNumber: 11
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Menu"].Item, {
@@ -1717,7 +1718,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 613,
+      lineNumber: 614,
       columnNumber: 13
     }
   }, "Home"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Menu"].Item, {
@@ -1726,7 +1727,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 616,
+      lineNumber: 617,
       columnNumber: 13
     }
   }, "OUR FOOD"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Menu"].Item, {
@@ -1735,14 +1736,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 619,
+      lineNumber: 620,
       columnNumber: 13
     }
   }, "PLANS"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Menu"].Item, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 622,
+      lineNumber: 623,
       columnNumber: 13
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -1756,7 +1757,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 623,
+      lineNumber: 624,
       columnNumber: 15
     }
   }, "Signup / login")))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -1765,7 +1766,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 637,
+      lineNumber: 638,
       columnNumber: 9
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -1777,7 +1778,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 638,
+      lineNumber: 639,
       columnNumber: 11
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -1787,7 +1788,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 639,
+      lineNumber: 640,
       columnNumber: 13
     }
   }, " ", __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -1796,7 +1797,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 641,
+      lineNumber: 642,
       columnNumber: 15
     }
   }, __jsx("img", {
@@ -1807,7 +1808,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 642,
+      lineNumber: 643,
       columnNumber: 17
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -1816,7 +1817,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 644,
+      lineNumber: 645,
       columnNumber: 15
     }
   }, __jsx("img", {
@@ -1828,14 +1829,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 645,
+      lineNumber: 646,
       columnNumber: 17
     }
   }))), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 652,
+      lineNumber: 653,
       columnNumber: 13
     }
   }, __jsx("h1", {
@@ -1847,14 +1848,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 653,
+      lineNumber: 654,
       columnNumber: 15
     }
   }, "Have No time", __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 661,
+      lineNumber: 662,
       columnNumber: 17
     }
   }), " to prepare ", __jsx("span", {
@@ -1864,7 +1865,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 661,
+      lineNumber: 662,
       columnNumber: 35
     }
   }, "food"), " ", "?")), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -1875,14 +1876,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 667,
+      lineNumber: 668,
       columnNumber: 13
     }
   }, "Choose one of our plans, enter delivery time ", __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 668,
+      lineNumber: 669,
       columnNumber: 60
     }
   }), " and enjoy delicious food without leaving your place!"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -1893,7 +1894,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 671,
+      lineNumber: 672,
       columnNumber: 13
     }
   }, " ", __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -1901,7 +1902,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 673,
+      lineNumber: 674,
       columnNumber: 15
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -1914,7 +1915,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 674,
+      lineNumber: 675,
       columnNumber: 17
     }
   }, "Subscribe Food")), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -1922,7 +1923,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 682,
+      lineNumber: 683,
       columnNumber: 15
     }
   }, __jsx("img", {
@@ -1934,14 +1935,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 683,
+      lineNumber: 684,
       columnNumber: 17
     }
   }))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 689,
+      lineNumber: 690,
       columnNumber: 13
     }
   }, __jsx("img", {
@@ -1952,7 +1953,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 690,
+      lineNumber: 691,
       columnNumber: 15
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -1962,7 +1963,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 692,
+      lineNumber: 693,
       columnNumber: 13
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -1972,14 +1973,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 693,
+      lineNumber: 694,
       columnNumber: 15
     }
   }, __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["TwitterOutlined"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 694,
+      lineNumber: 695,
       columnNumber: 17
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -1989,14 +1990,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 696,
+      lineNumber: 697,
       columnNumber: 15
     }
   }, __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["InstagramOutlined"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 697,
+      lineNumber: 698,
       columnNumber: 17
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2006,14 +2007,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 699,
+      lineNumber: 700,
       columnNumber: 15
     }
   }, __jsx(_ant_design_icons__WEBPACK_IMPORTED_MODULE_2__["FacebookOutlined"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 700,
+      lineNumber: 701,
       columnNumber: 17
     }
   })))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2022,7 +2023,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 704,
+      lineNumber: 705,
       columnNumber: 11
     }
   }, " ", __jsx("img", {
@@ -2033,7 +2034,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 706,
+      lineNumber: 707,
       columnNumber: 13
     }
   })))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
@@ -2043,7 +2044,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 713,
+      lineNumber: 714,
       columnNumber: 7
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -2060,7 +2061,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 714,
+      lineNumber: 715,
       columnNumber: 9
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2073,7 +2074,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 718,
+      lineNumber: 719,
       columnNumber: 11
     }
   }, __jsx("h1", {
@@ -2084,7 +2085,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 723,
+      lineNumber: 724,
       columnNumber: 13
     }
   }, "What we Do"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -2102,7 +2103,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 728,
+      lineNumber: 729,
       columnNumber: 9
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2111,7 +2112,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 732,
+      lineNumber: 733,
       columnNumber: 11
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
@@ -2124,7 +2125,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 733,
+      lineNumber: 734,
       columnNumber: 13
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2132,7 +2133,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 741,
+      lineNumber: 742,
       columnNumber: 15
     }
   }, __jsx("img", {
@@ -2144,7 +2145,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 742,
+      lineNumber: 743,
       columnNumber: 17
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2152,14 +2153,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 747,
+      lineNumber: 748,
       columnNumber: 15
     }
   }, __jsx("h4", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 748,
+      lineNumber: 749,
       columnNumber: 17
     }
   }, "Healthy Food")), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2171,7 +2172,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 750,
+      lineNumber: 751,
       columnNumber: 15
     }
   }, __jsx("p", {
@@ -2181,14 +2182,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 754,
+      lineNumber: 755,
       columnNumber: 17
     }
   }, "Food is tested on the basis of hygiene and taste both. Packaging and freshness of food is maintained"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 760,
+      lineNumber: 761,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -2196,7 +2197,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 761,
+      lineNumber: 762,
       columnNumber: 15
     }
   }))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2205,7 +2206,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 764,
+      lineNumber: 765,
       columnNumber: 11
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
@@ -2218,7 +2219,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 765,
+      lineNumber: 766,
       columnNumber: 13
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2226,7 +2227,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 773,
+      lineNumber: 774,
       columnNumber: 15
     }
   }, __jsx("img", {
@@ -2238,7 +2239,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 774,
+      lineNumber: 775,
       columnNumber: 17
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2246,14 +2247,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 779,
+      lineNumber: 780,
       columnNumber: 15
     }
   }, __jsx("h4", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 780,
+      lineNumber: 781,
       columnNumber: 17
     }
   }, "Homecooked")), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2265,7 +2266,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 782,
+      lineNumber: 783,
       columnNumber: 15
     }
   }, __jsx("p", {
@@ -2275,14 +2276,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 786,
+      lineNumber: 787,
       columnNumber: 17
     }
   }, "Collaboration with home cooks and provide platform to start their service near by area."))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 792,
+      lineNumber: 793,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -2290,7 +2291,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 793,
+      lineNumber: 794,
       columnNumber: 15
     }
   }))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2299,7 +2300,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 796,
+      lineNumber: 797,
       columnNumber: 11
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
@@ -2312,7 +2313,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 797,
+      lineNumber: 798,
       columnNumber: 13
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2320,7 +2321,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 805,
+      lineNumber: 806,
       columnNumber: 15
     }
   }, __jsx("img", {
@@ -2332,7 +2333,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 806,
+      lineNumber: 807,
       columnNumber: 17
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2340,21 +2341,21 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 811,
+      lineNumber: 812,
       columnNumber: 15
     }
   }, __jsx("h4", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 812,
+      lineNumber: 813,
       columnNumber: 17
     }
   }, "Customized", __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 814,
+      lineNumber: 815,
       columnNumber: 19
     }
   }), "delivery", " ")), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2366,7 +2367,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 818,
+      lineNumber: 819,
       columnNumber: 15
     }
   }, __jsx("p", {
@@ -2376,14 +2377,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 822,
+      lineNumber: 823,
       columnNumber: 17
     }
   }, "Pre-shedule delivery option and easy cancellation Available easy re-ordering and bulk order option."))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 828,
+      lineNumber: 829,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -2391,14 +2392,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 829,
+      lineNumber: 830,
       columnNumber: 15
     }
   }))))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 834,
+      lineNumber: 835,
       columnNumber: 7
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -2408,7 +2409,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 835,
+      lineNumber: 836,
       columnNumber: 9
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2416,7 +2417,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 836,
+      lineNumber: 837,
       columnNumber: 11
     }
   }, __jsx("img", {
@@ -2429,7 +2430,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 837,
+      lineNumber: 838,
       columnNumber: 13
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2437,14 +2438,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 846,
+      lineNumber: 847,
       columnNumber: 11
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 847,
+      lineNumber: 848,
       columnNumber: 13
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2458,21 +2459,21 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 848,
+      lineNumber: 849,
       columnNumber: 15
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 857,
+      lineNumber: 858,
       columnNumber: 17
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 858,
+      lineNumber: 859,
       columnNumber: 19
     }
   }, __jsx("h1", {
@@ -2485,28 +2486,28 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 859,
+      lineNumber: 860,
       columnNumber: 21
     }
   }, "How easy is it")), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 871,
+      lineNumber: 872,
       columnNumber: 19
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 872,
+      lineNumber: 873,
       columnNumber: 21
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 873,
+      lineNumber: 874,
       columnNumber: 23
     }
   }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_4__["FontAwesomeIcon"], {
@@ -2521,7 +2522,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 874,
+      lineNumber: 875,
       columnNumber: 25
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2531,7 +2532,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 884,
+      lineNumber: 885,
       columnNumber: 23
     }
   }, __jsx("h3", {
@@ -2541,7 +2542,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 885,
+      lineNumber: 886,
       columnNumber: 25
     }
   }, "Choose meal"), __jsx("p", {
@@ -2551,21 +2552,21 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 886,
+      lineNumber: 887,
       columnNumber: 25
     }
   }, "Select from a variety of range with just one click"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 891,
+      lineNumber: 892,
       columnNumber: 21
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 892,
+      lineNumber: 893,
       columnNumber: 23
     }
   }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_4__["FontAwesomeIcon"], {
@@ -2580,7 +2581,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 893,
+      lineNumber: 894,
       columnNumber: 25
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2590,7 +2591,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 903,
+      lineNumber: 904,
       columnNumber: 23
     }
   }, __jsx("h3", {
@@ -2600,7 +2601,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 904,
+      lineNumber: 905,
       columnNumber: 25
     }
   }, "Subscribe a Plan"), __jsx("p", {
@@ -2610,28 +2611,28 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 905,
+      lineNumber: 906,
       columnNumber: 25
     }
   }, "Choose your best timing when you want your", __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 907,
+      lineNumber: 908,
       columnNumber: 27
     }
   }), " food to arrive you"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 911,
+      lineNumber: 912,
       columnNumber: 21
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 912,
+      lineNumber: 913,
       columnNumber: 23
     }
   }, __jsx(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_4__["FontAwesomeIcon"], {
@@ -2646,7 +2647,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 913,
+      lineNumber: 914,
       columnNumber: 25
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2656,7 +2657,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 923,
+      lineNumber: 924,
       columnNumber: 23
     }
   }, __jsx("h3", {
@@ -2666,7 +2667,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 924,
+      lineNumber: 925,
       columnNumber: 25
     }
   }, "Get your MealBox"), __jsx("p", {
@@ -2676,14 +2677,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 925,
+      lineNumber: 926,
       columnNumber: 25
     }
   }, "Enter your order details and track yiur order easily", __jsx("br", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 927,
+      lineNumber: 928,
       columnNumber: 27
     }
   }), "with our effective tracking system"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -2693,7 +2694,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 932,
+      lineNumber: 933,
       columnNumber: 21
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -2706,7 +2707,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 933,
+      lineNumber: 934,
       columnNumber: 23
     }
   }, "Order Food"))))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2720,7 +2721,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 944,
+      lineNumber: 945,
       columnNumber: 15
     }
   }, __jsx("img", {
@@ -2729,7 +2730,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 953,
+      lineNumber: 954,
       columnNumber: 17
     }
   })))))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
@@ -2739,7 +2740,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 959,
+      lineNumber: 960,
       columnNumber: 7
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -2750,7 +2751,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 960,
+      lineNumber: 961,
       columnNumber: 9
     }
   }, __jsx("h1", {
@@ -2758,7 +2759,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 961,
+      lineNumber: 962,
       columnNumber: 11
     }
   }, "Homechefs & Kitchens")), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -2768,7 +2769,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 964,
+      lineNumber: 965,
       columnNumber: 9
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2783,7 +2784,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 965,
+      lineNumber: 966,
       columnNumber: 11
     }
   }, __jsx("img", {
@@ -2798,7 +2799,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 976,
+      lineNumber: 977,
       columnNumber: 13
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2811,7 +2812,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 988,
+      lineNumber: 989,
       columnNumber: 11
     }
   }, __jsx("div", {
@@ -2820,7 +2821,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 996,
+      lineNumber: 997,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -2829,7 +2830,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 997,
+      lineNumber: 998,
       columnNumber: 13
     }
   }), __jsx("div", {
@@ -2838,7 +2839,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 998,
+      lineNumber: 999,
       columnNumber: 13
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2851,21 +2852,21 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1001,
+      lineNumber: 1002,
       columnNumber: 11
     }
   }, " ", __jsx(_components_CarouselComponent__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1006,
+      lineNumber: 1007,
       columnNumber: 13
     }
   })))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1010,
+      lineNumber: 1011,
       columnNumber: 7
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -2873,7 +2874,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1011,
+      lineNumber: 1012,
       columnNumber: 9
     }
   }, __jsx("h1", {
@@ -2881,7 +2882,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1012,
+      lineNumber: 1013,
       columnNumber: 11
     }
   }, "In the most flexible package")), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -2899,7 +2900,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1014,
+      lineNumber: 1015,
       columnNumber: 9
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2908,7 +2909,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1018,
+      lineNumber: 1019,
       columnNumber: 11
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
@@ -2921,7 +2922,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1019,
+      lineNumber: 1020,
       columnNumber: 13
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2929,7 +2930,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1027,
+      lineNumber: 1028,
       columnNumber: 15
     }
   }, __jsx("img", {
@@ -2941,7 +2942,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1028,
+      lineNumber: 1029,
       columnNumber: 17
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2952,7 +2953,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1033,
+      lineNumber: 1034,
       columnNumber: 15
     }
   }, __jsx("h4", {
@@ -2963,14 +2964,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1034,
+      lineNumber: 1035,
       columnNumber: 17
     }
   }, "Weeknd Off"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1039,
+      lineNumber: 1040,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -2978,7 +2979,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1040,
+      lineNumber: 1041,
       columnNumber: 15
     }
   }))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -2987,7 +2988,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1043,
+      lineNumber: 1044,
       columnNumber: 11
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
@@ -3000,7 +3001,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1044,
+      lineNumber: 1045,
       columnNumber: 13
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -3008,7 +3009,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1052,
+      lineNumber: 1053,
       columnNumber: 15
     }
   }, __jsx("img", {
@@ -3020,7 +3021,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1053,
+      lineNumber: 1054,
       columnNumber: 17
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -3031,7 +3032,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1058,
+      lineNumber: 1059,
       columnNumber: 15
     }
   }, __jsx("h4", {
@@ -3042,14 +3043,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1059,
+      lineNumber: 1060,
       columnNumber: 17
     }
   }, "Swap Meal"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1064,
+      lineNumber: 1065,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -3057,7 +3058,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1065,
+      lineNumber: 1066,
       columnNumber: 15
     }
   }))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -3066,7 +3067,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1068,
+      lineNumber: 1069,
       columnNumber: 11
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
@@ -3079,7 +3080,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1069,
+      lineNumber: 1070,
       columnNumber: 13
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -3087,7 +3088,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1077,
+      lineNumber: 1078,
       columnNumber: 15
     }
   }, __jsx("img", {
@@ -3099,7 +3100,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1078,
+      lineNumber: 1079,
       columnNumber: 17
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -3110,7 +3111,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1083,
+      lineNumber: 1084,
       columnNumber: 15
     }
   }, __jsx("h4", {
@@ -3121,14 +3122,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1084,
+      lineNumber: 1085,
       columnNumber: 17
     }
   }, "Skip Meal"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1089,
+      lineNumber: 1090,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -3136,7 +3137,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1090,
+      lineNumber: 1091,
       columnNumber: 15
     }
   }))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -3145,7 +3146,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1093,
+      lineNumber: 1094,
       columnNumber: 11
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
@@ -3158,7 +3159,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1094,
+      lineNumber: 1095,
       columnNumber: 13
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -3166,7 +3167,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1102,
+      lineNumber: 1103,
       columnNumber: 15
     }
   }, __jsx("img", {
@@ -3178,7 +3179,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1103,
+      lineNumber: 1104,
       columnNumber: 17
     }
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -3189,7 +3190,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1108,
+      lineNumber: 1109,
       columnNumber: 15
     }
   }, __jsx("h4", {
@@ -3200,14 +3201,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1109,
+      lineNumber: 1110,
       columnNumber: 17
     }
   }, "Pause Meal"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1114,
+      lineNumber: 1115,
       columnNumber: 13
     }
   }, __jsx("div", {
@@ -3215,7 +3216,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1115,
+      lineNumber: 1116,
       columnNumber: 15
     }
   })), __jsx("img", {
@@ -3231,7 +3232,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1117,
+      lineNumber: 1118,
       columnNumber: 13
     }
   })))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Layout"], {
@@ -3242,14 +3243,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1133,
+      lineNumber: 1134,
       columnNumber: 7
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1134,
+      lineNumber: 1135,
       columnNumber: 9
     }
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -3259,7 +3260,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1135,
+      lineNumber: 1136,
       columnNumber: 11
     }
   }, __jsx("h1", {
@@ -3270,7 +3271,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1136,
+      lineNumber: 1137,
       columnNumber: 13
     }
   }, "Contact us")), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -3278,14 +3279,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1140,
+      lineNumber: 1141,
       columnNumber: 11
     }
   }, __jsx(_components_ContactUs__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1141,
+      lineNumber: 1142,
       columnNumber: 13
     }
   }))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
@@ -3298,7 +3299,7 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1144,
+      lineNumber: 1145,
       columnNumber: 9
     }
   }, __jsx(_components_googleMap__WEBPACK_IMPORTED_MODULE_7__["default"], {
@@ -3308,14 +3309,14 @@ function home() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1152,
+      lineNumber: 1153,
       columnNumber: 11
     }
   }))), __jsx(_components_footer__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 1155,
+      lineNumber: 1156,
       columnNumber: 7
     }
   }));
@@ -3353,7 +3354,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!*****************************!*\
   !*** multi ./pages/home.js ***!
   \*****************************/

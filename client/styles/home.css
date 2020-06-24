@@ -1,9 +1,3 @@
-@import "~antd/dist/antd.css";
-/* // @import "./antd.less";
-@import "~antd/dist/antd.less"; */
-.home {
-  background-color: aquamarine;
-}
 .logo {
   width: 173px;
   height: 31px;
@@ -23,14 +17,10 @@
 .ant-menu-horizontal > .ant-menu-submenu-open,
 .ant-menu-horizontal > .ant-menu-item-selected,
 .ant-menu-horizontal > .ant-menu-submenu-selected {
-  border-bottom-color: #74cf4e; /*Overriden property*/
+  border-bottom-color: #74cf4e;
   color: white;
 }
 
-/* .ant-menu-horizontal > .ant-menu-item,
-.ant-menu-horizontal > .ant-menu-submenu {
-  border-bottom-color: transparent;
-} */
 .ant-menu-horizontal {
   border-bottom: 0px !important;
 }
@@ -40,7 +30,6 @@ ant-btn:hover,
 }
 
 .layout {
-  /* background: url("../public/images/headerBg.png"); */
   height: 649px;
   position: relative;
   background-color: transparent !important;
@@ -237,15 +226,12 @@ Header {
 .anticon-arrow-right {
   font-size: 36px !important;
   margin-left: 20px !important;
-  /* height: 40px !important; */
 }
 .anticon-arrow-left {
   font-size: 36px !important;
   margin-left: 20px !important;
-  /* height: 40px !important; */
 }
-
-.cheflines {
+*/ .cheflines {
   height: 176px;
   font-size: 17px;
   width: 315px;
@@ -271,8 +257,7 @@ Header {
   margin-top: 0px;
   border-radius: 3px;
 }
-
-/* ////////second triangle row */
+////////second triangle row
 .triangle2 {
   position: relative;
   background-color: white;

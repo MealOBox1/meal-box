@@ -592,6 +592,7 @@ import CarouselComponent from "../components/CarouselComponent";
 import GoogleMap from "../components/googleMap";
 import ContactUs from "../components/ContactUs";
 import Footer from "../components/footer";
+// import "../styles/home.css";
 
 export default function home() {
   return (
