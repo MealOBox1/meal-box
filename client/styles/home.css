@@ -30,7 +30,7 @@ ant-btn:hover,
 }
 
 .layout {
-  height: 649px;
+  height: 763px;
   position: relative;
   background-color: transparent !important;
   overflow: hidden;
@@ -44,7 +44,7 @@ Header {
 .headerBg {
   position: absolute;
   left: 0;
-  top: 0;
+  top: -53px;
   /* width: 62%; */
   height: auto;
   z-index: 1;
@@ -92,7 +92,7 @@ Header {
 .plansBg {
   margin-top: 105px !important;
   width: 700px !important;
-  margin-left: 392px !important;
+  margin-left: 505px !important;
   clip-path: polygon(
     68% 0%,
     62% 0%,
@@ -177,13 +177,13 @@ Header {
   margin-left: -183px;
 }
 
-.chef1 {
+/* .chef1 {
   height: 150px;
   width: 150px;
   background-image: url("../public/images/chef3.jpg");
   background-position: center;
   border-radius: 47% 53% 53% 47% / 70% 68% 32% 30%;
-}
+} */
 #ch1 {
   width: 81px;
   height: 84px;
@@ -289,7 +289,7 @@ Header {
 .triangle2:after {
   transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%);
 }
-
+/* 
 .formBg {
   background: url("../public/images/Form.png");
   width: 456px;
@@ -299,7 +299,7 @@ Header {
   background-repeat: no-repeat;
   background-position: center;
   margin-left: 45px;
-}
+} */
 
 .footer {
   position: relative;

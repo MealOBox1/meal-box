@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { combineReducers } from \"redux\";\nimport itemReducer from \"./itemReducer\";\nimport orderReducer from \"./orderReducer\";\nexport default combineReducers({\n  item: itemReducer,\n  order: orderReducer\n});","map":null,"metadata":{},"sourceType":"module"}

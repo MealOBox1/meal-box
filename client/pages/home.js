@@ -592,7 +592,7 @@ import CarouselComponent from "../components/CarouselComponent";
 import GoogleMap from "../components/googleMap";
 import ContactUs from "../components/ContactUs";
 import Footer from "../components/footer";
-// import "../styles/home.css";
+import "../styles/home.css";
 
 export default function home() {
   return (
@@ -635,7 +635,7 @@ export default function home() {
             </Menu.Item>
           </Menu>
         </Header>
-        <Row className="headerBg" gutter={[16, 24]}>
+        <Row  gutter={[16, 24]}>
           <Col className="gutter-row" span={13} style={{ marginTop: "112px" }}>
             <Row style={{ marginLeft: "162px" }}>
               {" "}
@@ -665,11 +665,11 @@ export default function home() {
                 ?
               </h1>
             </div>
-            <Col style={{ padding: "0", marginLeft: "146px" }}>
+            <Col style={{ padding: "0", marginLeft: "296px" }}>
               Choose one of our plans, enter delivery time <br /> and enjoy
               delicious food without leaving your place!
             </Col>
-            <Row style={{ marginLeft: "139px", marginTop: "20px" }}>
+            <Row style={{ marginLeft: "297px", marginTop: "20px" }}>
               {" "}
               <Col span={10}>
                 <Button
@@ -702,9 +702,9 @@ export default function home() {
               </Col>
             </Row>
           </Col>
-          <Col className="gutter-row" span={11}>
+          <Col className="gutter-row Header" span={11}>
             {" "}
-            <img
+            <img className="headerBg"
               style={{ filter: "brightness(74%)" }}
               src="./images/headerBg.png"
             />
@@ -727,7 +727,7 @@ export default function home() {
           </Col>
         </Row>
         <Row
-          style={{ marginLeft: "151px", marginRight: 0, marginTop: "37px" }}
+          style={{ marginLeft: "272px", marginRight: 0, marginTop: "37px" }}
           gutter={{ xs: 24, sm: 24, md: 24, lg: 32 }}
         >
           <Col span={8} className="gutter-row">

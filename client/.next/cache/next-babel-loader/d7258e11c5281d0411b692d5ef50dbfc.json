@@ -1,1 +1,0 @@
-{"ast":null,"code":"var __jsx = React.createElement;\nimport React from \"react\";\nimport User from \"./user\";\nimport Footer from \"../components/footer\";\nexport default function usersummary(props) {\n  return __jsx(\"div\", null, __jsx(User, null), props.children, __jsx(Footer, null));\n}","map":null,"metadata":{},"sourceType":"module"}

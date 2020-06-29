@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../styles/global.css";
-import "../styles/home.css";
+// import "../styles/home.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faEnvelope, faKey } from "@fortawesome/free-solid-svg-icons";
 import { Provider } from "react-redux";

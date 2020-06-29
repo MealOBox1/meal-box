@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[29],{BvRO:function(n,w,o){(window.__NEXT_P=window.__NEXT_P||[]).push(["/user",function(){return o("R2GR")}])}},[["BvRO",0,1,2,3,5,6,7,8,9,4]]]);
