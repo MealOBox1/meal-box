@@ -48,9 +48,9 @@ app.get("/", (req, res) => {
 
 const port = process.env.PORT || 5000;
 
-console.log(process.env.NODE_ENV);
+// console.log(process.env.NODE_ENV);
 
-const server = app.listen(port, () =>
+const server = app.listen(process.env.PORT || 5000, () =>
   console.log(`Server started on port ${port}`)
 );
 
