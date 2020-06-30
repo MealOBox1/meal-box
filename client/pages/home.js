@@ -592,7 +592,7 @@ import CarouselComponent from "../components/CarouselComponent";
 import GoogleMap from "../components/googleMap";
 import ContactUs from "../components/ContactUs";
 import Footer from "../components/footer";
-import "../styles/home.css";
+//import "../styles/home.css";
 
 export default function home() {
   return (
@@ -718,10 +718,10 @@ export default function home() {
         >
           <Col
             span={12}
-            style={{ textAlign: "-webkit-right", marginLeft: "65px" }}
+            style={{ textAlign: "-webkit-right", marginLeft: "65px" ,textAlign:" -moz-right"}}
             className="gutter-row"
           >
-            <h1 style={{ borderBottom: "2px solid #74cf4e", width: "163px" }}>
+            <h1 style={{ borderBottom: "2px solid #74cf4e", width: "166px" }}>
               What we Do
             </h1>
           </Col>
@@ -810,10 +810,12 @@ export default function home() {
                 />
               </Col>
               <Col className="gutter-row">
-                <h4>
-                  Customized
-                  <br />
-                  delivery{" "}
+                <h4 style={{marginBottom: 0,
+fontSize: "15px"}}>
+                  Customized</h4>
+                  {/* <br /> */}
+                 <h4 style={{marginBottom: 0,
+fontSize: "15px"}}> delivery
                 </h4>
               </Col>
               <Col
@@ -855,8 +857,8 @@ export default function home() {
                   marginTop: "80px",
                 }}
               >
-                <Layout>
-                  <Col>
+                <Layout >
+                  <Col >
                     <h1
                       className="plans"
                       style={{
@@ -1132,7 +1134,7 @@ export default function home() {
         </Row>
       </Layout>
       <Layout style={{ position: "relative", height: "813px" }}>
-        <Row>
+        <Row style={{display:"block"}}>
           <Row style={{ width: "-webkit-fill-available" }}>
             <h1 className="plans" style={{ marginLeft: "93px" }}>
               Contact us

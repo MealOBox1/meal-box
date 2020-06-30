@@ -143,16 +143,16 @@ Header {
   margin-top: 0px;
   border-radius: 3px;
 }
-/* 
+
 .chefContainer {
   margin: 3px;
   padding: 3px;
-  width: 120px;
+  width: 205px;
   border-bottom-left-radius: 70px;
   border-bottom-right-radius: 70px;
   border-top-left-radius: 180px;
   border-top-right-radius: 180px;
-} */
+}
 
 .chef {
   border-radius: 47% 53% 53% 47% / 70% 68% 32% 30%;
@@ -177,13 +177,13 @@ Header {
   margin-left: -183px;
 }
 
-/* .chef1 {
+.chef1 {
   height: 150px;
   width: 150px;
   background-image: url("../public/images/chef3.jpg");
   background-position: center;
   border-radius: 47% 53% 53% 47% / 70% 68% 32% 30%;
-} */
+}
 #ch1 {
   width: 81px;
   height: 84px;
@@ -257,7 +257,7 @@ Header {
   margin-top: 0px;
   border-radius: 3px;
 }
-////////second triangle row
+/* ////////second triangle row */
 .triangle2 {
   position: relative;
   background-color: white;
@@ -289,7 +289,7 @@ Header {
 .triangle2:after {
   transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%);
 }
-/* 
+
 .formBg {
   background: url("../public/images/Form.png");
   width: 456px;
@@ -299,7 +299,7 @@ Header {
   background-repeat: no-repeat;
   background-position: center;
   margin-left: 45px;
-} */
+}
 
 .footer {
   position: relative;
