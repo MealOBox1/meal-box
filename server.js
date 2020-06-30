@@ -39,6 +39,9 @@ app.all("*", (req, res, next) => {
 
 app.use(globalErrorController);
 
+app.use(express.static(__dirname + '/dist/'));
+app.use('/src/assets', express.static(__dirname + '/src/assets/'));
+
 app.get("/", (req, res) => {
   res.send("<h1>hellow<h1>");
 });
