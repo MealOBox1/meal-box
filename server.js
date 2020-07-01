@@ -48,6 +48,8 @@ app.use('/src/assets', express.static(__dirname + '/src/assets/'));
     res.redirect('/');
  });
 
+ const env = process.env.NODE_ENV;
+
 
 const port = process.env.PORT || 5000;
 
