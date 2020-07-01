@@ -23,7 +23,8 @@
     "express-group-routes": "^1.1.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "strapi-hook-mongoose": "^3.0.0-beta.17.8"
   },
   "devDependencies": {
     "@zeit/next-less": "^1.0.1",
