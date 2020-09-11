@@ -9,7 +9,7 @@
   background: transparent;
 }
 
-.ant-menu-horizontal > .ant-menu-item:hover,
+/* .ant-menu-horizontal > .ant-menu-item:hover,
 .ant-menu-horizontal > .ant-menu-submenu:hover,
 .ant-menu-horizontal > .ant-menu-item-active,
 .ant-menu-horizontal > .ant-menu-submenu-active,
@@ -19,7 +19,7 @@
 .ant-menu-horizontal > .ant-menu-submenu-selected {
   border-bottom-color: #74cf4e;
   color: white;
-}
+} */
 
 .ant-menu-horizontal {
   border-bottom: 0px !important;
@@ -49,6 +49,7 @@ Header {
   height: auto;
   z-index: 1;
   /* opacity: 0.6; */
+  
 }
 .customclass {
   width: 100px;
@@ -180,7 +181,7 @@ Header {
 .chef1 {
   height: 150px;
   width: 150px;
-  background-image: url("../public/images/chef3.jpg");
+  /* background-image: url("../public/images/chef3.jpg"); */
   background-position: center;
   border-radius: 47% 53% 53% 47% / 70% 68% 32% 30%;
 }
@@ -291,7 +292,7 @@ Header {
 }
 
 .formBg {
-  background: url("../public/images/Form.png");
+  /* background-image: url('+"static/images/Form.png"+'); */
   width: 456px;
   height: 425px;
   border-radius: 35px 35px 35px 35px;

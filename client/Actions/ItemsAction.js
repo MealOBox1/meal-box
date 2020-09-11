@@ -33,6 +33,17 @@ export const postPlan = (data) => (dispatch) => {
     payload: data,
   });
 };
+
+export const UpdateAddress = (id,data) => (dispatch) => {
+  console.log(data);
+  defaultAxios.put(`/user/UpdateAddress/${id}`, data).then((res) =>
+    dispatch({
+      type: "Update_Add",
+      payload: res.data,
+    })
+  );
+};
+
 export const postAddress = (data) => (dispatch) => {
   console.log(data);
   defaultAxios.post(`/user/PostAddress`, data).then((res) =>
@@ -43,14 +54,18 @@ export const postAddress = (data) => (dispatch) => {
   );
 };
 
-export const GetAddress = (data) => (dispatch) => {
-  console.log(data);
-  defaultAxios.get(`/user/Addresses`, data).then((res) =>
-    dispatch({
-      type: Get_Add,
-      payload: res.data,
-    })
-  );
+export const GetAddress = (data) => (dispatch,getState) => {
+  console.log(getState().auth);
+  if(getState().auth.user!== null){
+    const id= getState().auth.user._id
+    defaultAxios.get(`/user/Addresses/${id}`, id).then((res) =>
+      dispatch({
+        type: Get_Add,
+        payload: res.data,
+      })
+    );
+  }
+
 };
 
 

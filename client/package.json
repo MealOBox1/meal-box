@@ -24,15 +24,18 @@
     "file-loader": "^6.0.0",
     "google-maps-react": "^2.0.6",
     "increase-memory-limit": "^1.0.7",
+    "js-cookie": "^2.2.1",
     "less-vars-to-js": "^1.3.0",
     "mongoose": "^5.9.16",
     "next": "9.3.5",
     "next-compose-plugins": "^2.2.0",
+    "next-images": "^1.4.0",
     "next-redux-wrapper": "^6.0.0",
     "null-loader": "^4.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0",
@@ -42,6 +45,6 @@
   },
   "devDependencies": {
     "@zeit/next-css": "^1.0.1"
-  }
-
+  },
+  "proxy":"http://localhost:5000"
 }

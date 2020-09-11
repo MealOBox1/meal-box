@@ -1,132 +1,267 @@
-import React from "react";
-import { Row, Col } from "antd";
+import React,{useState,useEffect} from "react";
+import { Row, Col,Modal,Avatar,Button,Select } from "antd";
+import { Menu, Dropdown } from 'antd';
+import { DownOutlined } from '@ant-design/icons';
+const { Option } = Select;
+import {connect} from "react-redux"
+import {GetOrder,UpdateOrder} from "../Actions/OrderAction";
 
-// import { Table, Tag, Space } from "antd";
+function OrderTable(props) {
+  const [modalProps, setmodalProps] = useState({
+    item:null,
+    loading: false,
+    visible: false,
+  });
 
-// const columns = [
-//   {
-//     title: "Product Name & Details",
-//     dataIndex: "name",
-//     key: "name",
-//     render: (text) => <a>{text}</a>,
-//   },
-//   {
-//     title: "Age",
-//     dataIndex: "age",
-//     key: "age",
-//   },
-//   {
-//     title: "summary",
-//     dataIndex: "address",
-//     key: "address",
-//   },
-//   {
-//     title: "Status of Delivery",
-//     key: "tags",
-//     dataIndex: "tags",
-//     render: (tags) => (
-//       <>
-//         {tags.map((tag) => {
-//           let color = tag.length > 5 ? "geekblue" : "green";
-//           if (tag === "loser") {
-//             color = "volcano";
-//           }
-//           return (
-//             <Tag color={color} key={tag}>
-//               {tag.toUpperCase()}
-//             </Tag>
-//           );
-//         })}
-//       </>
-//     ),
-//   },
-//   {
-//     title: "Action",
-//     key: "action",
-//     render: (text, record) => (
-//       <Space size="middle">
-//         <a>Invite {record.name}</a>
-//         <a>Delete</a>
-//       </Space>
-//     ),
-//   },
-// ];
+  const [Status, setStatus] = useState({staus:null})
+  
 
-// const data = [
-//   {
-//     key: "1",
-//     name: "John Brown",
-//     age: 32,
-//     address: "New York No. 1 Lake Park",
-//     tags: ["nice", "developer"],
-//   },
-//   {
-//     key: "2",
-//     name: "Jim Green",
-//     age: 42,
-//     address: "London No. 1 Lake Park",
-//     tags: ["loser"],
-//   },
-//   {
-//     key: "3",
-//     name: "Joe Black",
-//     age: 32,
-//     address: "Sidney No. 1 Lake Park",
-//     tags: ["cool", "teacher"],
-//   },
-// ];
+  useEffect(() => {
+  console.log(props)
+  props.GetOrder()
+ },[])
 
-function OrderTable() {
+  useEffect(() => {
+    console.log(modalProps)
+ 
+  },[modalProps])
+
+  const showModal = (id) => {
+    setmodalProps((prevState) => ({
+      ...prevState,
+      visible: true,
+      item:props.orders.filter(item => item._id === id)
+    }));
+  }
+
+  const handleOk = () => {
+    setmodalProps((prevState) => ({ ...prevState, loading: true }));
+    setTimeout(() => {
+      props.UpdateOrder(modalProps.item[0]._id,Status)
+      setmodalProps((prevState) => ({
+        ...prevState,
+        loading: false,
+        visible: false,
+      }));
+      
+     
+    }, 4000);
+  };
+
+  const handleCancel = () => {
+    setmodalProps((prevState) => ({ ...prevState, visible: false }));
+  };
+
+  function handleChange(value) {
+    console.log(`selected ${value}`);
+    setStatus(()=>({
+      status:value
+    }))
+  }
+  
+  
+
   return (
     <div>
       {/* <Table columns={columns} dataSource={data} /> */}
       <Row style={{ justifyContent: "space-between" }}>
         <Col>
           <h3>
-            <b>Product Name & Details</b>
+            <b>Meal info</b>
           </h3>
         </Col>
         <Col>
           <h3>
             {" "}
-            <b>Status of Delivery</b>
+            <b>Status </b>
           </h3>
         </Col>
         <Col>
           <h3>
-            <b>Summary</b>
+            <b>Meal Type</b>
           </h3>
         </Col>
       </Row>
-      <Row style={{ marginTop: "18px", justifyContent: "space-between" }}>
-        <Col>
-          <div style={{ display: "flex" }}>
-            <div style={{ height: "100px", width: "105px" }}>
-              {" "}
-              <img src="../images/plate.jpg" style={{ borderRadius: "7px" }} />
-            </div>
+      {props.orders ? props.orders.map(item => {
+             return <Row style={{ marginTop: "18px", justifyContent: "space-between" }}  onClick={()=>showModal(item._id)}>
+              <Col>
+                <div style={{ display: "flex" }}>
+                  <div style={{ height: "100px", width: "55px" }}>
+                    {" "}
+                    <img src="../images/plate.jpg" style={{ borderRadius: "7px" }} />
+                  </div>
+      
+                  <div style={{ marginLeft: "10px" }}>
+                    <h4>{item.name}</h4>
+                    <p>Cheese ,Tommato,Salad</p>
+                    {/* <p>id:4855121</p> */}
+                  </div>
+                </div>
+              </Col>
+              <Col>
+                <h3 style={{ color: "#74cf4e" }}>Delivered</h3>
+              </Col>
+              <Col style={{ fontSize: "11px" }}>
+                <h2>{item.food ? item.food.meals :null }</h2>
+              </Col>
+            </Row>
 
-            <div style={{ marginLeft: "10px" }}>
-              <h4>MealBox Veg Naan</h4>
-              <p>Cheese ,Tommato,Salad</p>
-              <p>id:4855121</p>
+            }):null}
+      {modalProps.item ? <Modal
+          visible={modalProps.visible}
+          // title="Title"
+          style={{ padding: 0 }}
+          bodyStyle={{ padding: 0 }}
+          onOk={handleOk}
+          onCancel={handleCancel}
+          footer={[
+            <Button key="back" onClick={handleCancel}>
+              Return
+            </Button>,
+            <Button
+              //   type="primary"
+              shape="round"
+              //icon={<DownloadOutlined />}
+              size="large"
+              style={{
+                // marginLeft: "246px",
+                marginTop: "39px",
+                backgroundColor: "#74cf4e",
+                color: "white",
+              }}
+              value="Silver"
+              id="silver"
+              //onClick={choosePlan}
+              key="submit"
+              type="primary"
+              loading={modalProps.loading}
+              onClick={handleOk}
+            >
+              Confirm
+            </Button>,
+          ]}
+        >
+          <div style={{ width: " 521px", height: "121px" }}>
+            <img
+              alt="example"
+              src="./images/plate.jpg"
+              style={{ height: "inherit", width: "520px", objectFit: "cover" }}
+            />
+          </div>
+          <Row style={{ justifyContent:"space-evenly"}}>
+          <Col
+             // span={5}
+              style={{ padding: "11px", display: "flex", flexDirection: "row" }}
+            >
+              <div style={{ marginLeft: "20px" }}>
+                <h3>Meal :</h3>
+
+              </div>
+            </Col>
+           <Col
+             // span={19}
+              style={{
+               
+                padding: "11px",
+              }}
+            >
+              <h3>{modalProps.item[0].name }</h3>
+              {/* <p>Special 1 Plate , 4 Roti</p> */}
+            </Col>
+        
+          </Row>
+          <Row style={{ justifyContent:"space-evenly"}}>
+          <Col
+             // span={5}
+              style={{ padding: "11px", display: "flex", flexDirection: "row" }}
+            >
+              <div style={{ marginLeft: "20px" }}>
+                <h3>Meal Type :</h3>
+
+              </div>
+            </Col>
+            
+           <Col
+             // span={19}
+              style={{
+               
+                padding: "11px",
+              }}
+            >
+              
+              <p>{modalProps.item[0].food.meals }</p>
+            </Col>
+        
+          </Row>
+          <Row style={{ justifyContent:"space-evenly"}}>
+          <Col
+             // span={5}
+              style={{ padding: "11px", display: "flex", flexDirection: "row" }}
+            >
+              <div style={{ marginLeft: "20px" }}>
+                <h3>Subscription :</h3>
+
+              </div>
+            </Col>
+           <Col
+             // span={19}
+              style={{
+               
+                padding: "11px",
+              }}
+            >
+            
+              <p>{modalProps.item[0].days}</p>
+            </Col>
+        
+          </Row>
+          <Row style={{ justifyContent:"space-evenly"}}>
+          <Col
+             // span={5}
+              style={{ padding: "11px", display: "flex", flexDirection: "row" }}
+            >
+              <div style={{ marginLeft: "20px" }}>
+                <h3>Meal Status :</h3>
+
+              </div>
+            </Col>
+           <Col
+             // span={19}
+              style={{
+               
+                padding: "11px",
+              }}
+            >
+            
+            <Select defaultValue="lucy" style={{ width: 120 }} onChange={handleChange}>
+      <Option value="jack">Stop</Option>
+      <Option value="lucy">Skip</Option>
+      <Option value="disabled" >
+        Pause/resume
+      </Option>
+    
+    </Select>
+            </Col>
+        
+          </Row>
+          
+          <Row style={{ flexDirection: " column", marginTop: "15px" }}>
+            {/*   <div className="site-card-border-less-wrapper">
+              <Card
+                style={{ borderLeft: "3px solid #74cf4e", width: " 652px" }}
+              > */}
+           
+            <div style={{ marginLeft: "15px" }}>
             </div>
-          </div>
-        </Col>
-        <Col>
-          <h3 style={{ color: "#74cf4e" }}>Delivered</h3>
-        </Col>
-        <Col style={{ fontSize: "11px" }}>
-          <p>#100</p>
-          <p>Delivery time: 45min-1hr</p>
-          <div>
-            <p>Subtotal:#400</p>
-            <p>Shipping:#80</p>
-          </div>
-          <p>Total:#480</p>
-        </Col>
-      </Row>
+           </Row>
+        </Modal>:null}
+      
     </div>
   );
 }
-export default OrderTable;
+
+const mapStateToProps = (state) => ({
+orders:state.order.order
+})
+
+export default connect( mapStateToProps,{GetOrder,UpdateOrder})(OrderTable);

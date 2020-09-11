@@ -1,15 +1,16 @@
-import React from "react";
+import React,{useState} from "react";
 import { Row } from "antd";
 import UserLayout from "./userlayout";
-import { Card, Input, Button } from "antd";
+import { Card, Input, Button ,Modal,Col,Avatar} from "antd";
 const { Search } = Input;
 import { SearchOutlined } from "@ant-design/icons";
 import Orders from "../components/OrderTable";
 
 export default function Overview() {
+
   return (
     <div>
-      <UserLayout>
+      <UserLayout key="2">
         <Row style={{ flexDirection: "column", alignItems: "center" }}>
           <h2>Overview</h2>
           <Row style={{ width: "608px", justifyContent: "space-between" }}>
@@ -60,16 +61,17 @@ export default function Overview() {
                     Search
                   </Button>
                 </Row>
-                <Row style={{ marginTop: "12px" }}>
+                <Row style={{ marginTop: "12px" }} >
                   <p>
                     <b style={{ marginRight: "7px" }}>Vender:</b>Naman
                   </p>
                 </Row>
-                <Orders />
+                <Orders/>
               </Card>
             </div>
           </Row>
         </Row>
+    
       </UserLayout>
     </div>
   );

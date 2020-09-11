@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { connect } from "react-redux";
 import { GetAddress } from "../Actions/ItemsAction";
-import { OrderAddress, GetCart } from "../Actions/OrderAction";
+import { OrderAddress, GetCart ,Orderfood} from "../Actions/OrderAction";
 import { plans } from "../Controllers/plans";
 import Router from "next/router";
 
@@ -22,6 +22,7 @@ function shipping(props) {
     console.log("hiiiiiiiiii");
     props.GetCart(router.query.shipping);
     props.GetAddress();
+   
   }, []);
 
   useEffect(() => {
@@ -36,10 +37,13 @@ function shipping(props) {
   // }
 
   const handleAddress = () => {
-    props.OrderAddress(router.query.shipping, props.address[1]._id);
-    Router.push("/payment");
+    console.log(props.cart.foodid._id)
+    console.log( props.address[1]._id)
+    console.log(props.cart.days)
+    props.Orderfood({food:props.cart.foodid._id, address:props.address[1]._id,days:props.cart.days,price:props.cart.price});
+    // Router.push("/payment");
   };
-  console.log(props.cart);
+  console.log(router.query);
   console.log(props.address[1]);
 
   return (
@@ -172,7 +176,7 @@ function shipping(props) {
                 fontSize: "10px",
               }}
             >
-              <p style={{ marginBottom: 0 }}>Special 1 plate , 4 roti</p>
+              {/* <p style={{ marginBottom: 0 }}>Special 1 plate , 4 roti</p> */}
               <p style={{ marginBottom: 0 }}>${props.cart.price} </p>
             </div>
           </div>
@@ -204,11 +208,11 @@ function shipping(props) {
               </li>
               <li style={{ display: "flex", justifyContent: "space-between" }}>
                 <h4>Promo Code</h4>
-                <p>$ 80</p>
+                <p>$ 0</p>
               </li>
               <li style={{ display: "flex", justifyContent: "space-between" }}>
                 <h4>Delivery</h4>
-                <p>$ 80</p>
+                <p>$ 0</p>
               </li>
               <li
                 style={{
@@ -235,6 +239,6 @@ const mapStateToProps = (state) => ({
   address: state.item.Address,
 });
 
-export default connect(mapStateToProps, { GetAddress, OrderAddress, GetCart })(
+export default connect(mapStateToProps, { Orderfood,GetAddress, OrderAddress, GetCart })(
   shipping
 );

@@ -4,24 +4,28 @@ const Schema = mongoose.Schema;
 //create Schema
 
 const ItemSchema = new Schema({
-  // UserID: {
-  //   type: Number,
-  //   unique: true,
-  //   required: true
-  // },
+  UserID: {
+    unique: true,
+    type: Schema.Types.ObjectId,
+    ref: "client",
+    required: true,
+  },
   name: {
     type: String,
-    required: true,
+    
   },
   landmark: {
     type: String,
     required: true,
   },
-  Address: {
+  address: {
     type: String,
   },
   pincode: {
-    type: Number,
+    type: String,
+  },
+  type:{
+    type: String,
   },
   register_date: {
     type: Date,

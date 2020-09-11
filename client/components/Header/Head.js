@@ -29,7 +29,7 @@ export default function Head() {
             <BellOutlined />
           </Menu.Item>
           <Menu.Item>Ram</Menu.Item>
-          <Menu.Item>
+          <Menu.Item style={{justifyContent:"center"}}>
             <Avatar
               className={styles.avatar}
               src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"

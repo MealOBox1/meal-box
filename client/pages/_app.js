@@ -7,18 +7,28 @@ import { Provider } from "react-redux";
 import withRedux, { createWrapper } from "next-redux-wrapper";
 import store from "../store";
 import App from "next/app";
+import {loadUser} from "../Actions/User"
+import PrivateRoute from "../components/auth/privateRoute"
 library.add(faEnvelope, faKey);
+
 // import "../css/antd.less";
 // import "../styles/home.less";
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
+
+static async getInitialProps({ Component, ctx }) {
+//  store.dispatch(loadUser())
+
     const pageProps = Component.getInitialProps
       ? await Component.getInitialProps(ctx)
       : {};
 
     //Anything returned here can be accessed by the client
     return { pageProps: pageProps };
+  }
+
+  componentDidMount(){
+    store.dispatch(loadUser())
   }
 
   render() {

@@ -1,0 +1,6 @@
+{
+"mongoURI": "mongodb+srv://Prashant:prashantmongo8824@cluster0-16mvu.mongodb.net/test?retryWrites=true&w=majority",
+"jwtSecret": "sl_myjwtSecret",
+"accountSid ": "AC296afda6c38cdadc27cff331f233e2e6",
+"authToken" : "905a6c2fe583c15844ce0e72f09d1df7"
+}

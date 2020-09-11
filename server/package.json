@@ -7,14 +7,15 @@
     "client-install": "npm install --prefix client",
     "start": "node server.js",
     "server": "nodemon server.js",
-    "client": "npm run dev --prefix client",
+    "client": "cd ../client && npm run dev ",
     "dev": "concurrently \"npm run server \" \"npm run client\"",
     "build": "npm install --prefix client && npm run deploy --prefix client",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run deploy --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install cd ../client && npm run deploy  cd ../client"
   },
   "author": "Prashant Tongra",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "config": "^3.3.1",
@@ -22,9 +23,10 @@
     "express": "^4.17.1",
     "express-group-routes": "^1.1.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.6",
+    "mongoose": "^5.9.25",
     "redux-thunk": "^2.3.0",
-    "strapi-hook-mongoose": "^3.0.0-beta.17.8"
+    "strapi-hook-mongoose": "^3.0.0-beta.17.8",
+    "twilio": "^3.48.2"
   },
   "devDependencies": {
     "@zeit/next-less": "^1.0.1",

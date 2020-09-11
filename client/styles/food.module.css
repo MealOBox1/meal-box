@@ -19,7 +19,10 @@
   border-bottom-color: #74cf4e; /*Overriden property*/
   color: green !important;
 }
-
+ant-menu-horizontal > .ant-menu-item-selected a {
+  border-bottom-color: #74cf4e!important;
+  color: #74cf4e!important;
+}
 .popoverContent {
   position: absolute;
   /* z-index: -1; */

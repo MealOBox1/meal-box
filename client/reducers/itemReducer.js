@@ -10,7 +10,7 @@ const initialState = {
   items: [],
   auth: false,
   PlanType: "",
-  Address: {},
+  Address: [],
 
 };
 
@@ -40,12 +40,19 @@ export default function (state = initialState, action) {
     case Post_Add:
       return {
         ...state,
-        Address: { ...state.Address, ...action.payload },
+        Address: [...state.Address, action.payload ],
       };
     case Get_Add:
       return {
         ...state,
-        Address: { ...state.Address, ...action.payload },
+        Address: action.payload ,
+      };
+      case "Update_Add":
+      return {
+        ...state,
+        Address:state.Address.map((el)=>
+        el._id===payload._id ? payload:el
+        ) ,
       };
     default:
       return state;

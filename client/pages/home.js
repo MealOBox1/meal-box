@@ -592,9 +592,24 @@ import CarouselComponent from "../components/CarouselComponent";
 import GoogleMap from "../components/googleMap";
 import ContactUs from "../components/ContactUs";
 import Footer from "../components/footer";
-//import "../styles/home.css";
+import Bgform from "../public/static/Form.png"
+import "../styles/home.css";
+import  styled from "styled-components"
 
 export default function home() {
+const Raw=styled(Row)`
+background-image: url(${Bgform}); 
+width: 456px;
+height: 425px;
+border-radius: 35px 35px 35px 35px;
+background-size: 470px;
+background-repeat: no-repeat;
+background-position: center;
+margin-left: 45px;
+
+
+`
+
   return (
     <>
       <Layout className="layout">
@@ -1140,9 +1155,9 @@ fontSize: "15px"}}> delivery
               Contact us
             </h1>
           </Row>
-          <Row className="formBg">
+          <Raw >
             <ContactUs />
-          </Row>
+          </Raw>
         </Row>
         <Row
           style={{

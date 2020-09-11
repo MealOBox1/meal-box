@@ -17,7 +17,7 @@ function Food(props) {
     loading: false,
     visible: false,
   });
-  const [value, setvalue] = useState(1);
+  const [value, setvalue] = useState(3);
   const [foodId, setfoodId] = useState({
     id: "",
     subscriptionDays: 1,
@@ -49,7 +49,7 @@ function Food(props) {
       foodid: props.menu[0]._id,
     }));
   };
-  const List = useSelector((state) => state.order.cart);
+  
 
   const handleOk = () => {
     setmodalProps((prevState) => ({ ...prevState, loading: true }));
@@ -62,11 +62,10 @@ function Food(props) {
         visible: false,
       }));
       console.log(foodId);
-      // props.Orderfood(foodId);
+      props.Orderfood(foodId);
 
       console.log(props.cart);
-      console.log(List);
-      // Router.push("/[shipping]", `/${List._id}`);
+     
     }, 4000);
   };
 
@@ -96,7 +95,7 @@ function Food(props) {
     props.getItems(state);
   }, [state]);
 
-  const onchange = (e) => {
+ function onchange(e) {
     console.log(e.target.value);
 
     setvalue(e.target.value);
@@ -106,7 +105,7 @@ function Food(props) {
     }));
     setcart({
       ...cart,
-      days: value,
+      days: e.target.value,
     });
     console.log(value);
   };
@@ -117,7 +116,7 @@ function Food(props) {
 
   return (
     <div>
-      <UserLayout>
+      <UserLayout key="1">
         <Row style={{ marginTop: "75px", justifyContent: "center" }}>
           <div className="site-card-border-less-wrapper">
             <Card style={{ borderLeft: "3px solid #74cf4e" }}>
@@ -426,6 +425,7 @@ function Food(props) {
           {/* <p>Some contents...</p>
           <p>Some contents...</p> */}
         </Modal>
+   
       </UserLayout>
     </div>
   );

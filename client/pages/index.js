@@ -5,22 +5,9 @@ import utilStyles from "../styles/utils.module.css";
 import { connect } from "react-redux";
 import { getItems } from "../Actions/ItemsAction";
 
+
 function Home(props) {
-  // const people = [
-  //   { name: "persi" },
-  //   { name: "prashant" },
-  //   { name: "tongra" },
-  //   { name: "ram" },
-  // ];
-  // static getInitialProps({ store }) {
-  //   store.dispatch(getItems());
-  //   return { initialState: store.getState() };
-
-  // }
-
-  // constructor(props) {
-  //   super(props);
-  // }
+  
   console.log(props);
   return (
     <Layout>
